@@ -1,0 +1,54 @@
+<div *ngIf="pet" class="wrapper">
+  <p>Know of a part needing a home?</p>
+  <br>
+  <a [routerLink]="['']">Home</a>
+  <br>
+
+  <form>
+    <label for="name">Pet Name:
+      <br>
+      <input type="text" name="pet.petname" id="name" [(ngModel)]="pet.petname">
+      <div *ngIf="error_name" class="error_message">
+        <p>{{ error_name.error }}</p>
+      </div>
+    </label>
+    <br>
+    <label for="type">Pet Type:
+      <br>
+      <input type="text" name="pet.pettype" id="type" [(ngModel)]="pet.pettype">
+      <div *ngIf="error_type" class="error_message">
+        <p>{{ error_type.error }}</p>
+      </div>
+    </label>
+    <br>
+    <label for="description">Description:
+      <br>
+      <input type="text" name="pet.description" id="description" [(ngModel)]="pet.description">
+      <div *ngIf="error_description" class="error_message">
+        <p>{{ error_description.error }}</p>
+      </div>
+    </label>
+    <br>
+    <p>Skills:</p>
+    <br>
+    <label for="skill_1">Skill 1:
+      <input type="text" name="pet.skill_1" id="skill_1" [(ngModel)]="pet.skill_1">
+    </label>
+    <br>
+    <label for="skill_2">Skill 2:
+      <input type="text" name="pet.skill_2" id="skill_2" [(ngModel)]="pet.skill_2">
+    </label>
+    <br>
+    <label for="skill_3">Skill 3:
+      <input type="text" name="pet.skill_3" id="skill_3" [(ngModel)]="pet.skill_3">
+    </label>
+    <br>
+    <input type="submit" value="Edit Pet" (click)="editPetThroughService()">
+    <input type="button" value="Cancel" (click)="reRouteToHome()">
+
+  </form>
+
+  <div *ngIf="error" id="error_message">
+    <p>{{ error.error }}</p>
+  </div>
+</div>

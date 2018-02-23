@@ -1,0 +1,22 @@
+.wrapper {
+  border: aquamarine 5px solid;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.details {
+    border: lightgrey 2px solid;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+}
+
+h4, p {
+    display: inline-block;
+    margin: 10px 0px;
+}
+
+.indent{
+    margin: 0px 30px;
+}
