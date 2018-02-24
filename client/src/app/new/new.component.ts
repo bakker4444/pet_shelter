@@ -40,11 +40,11 @@ export class NewComponent implements OnInit {
     let observable = this._httpService.addPet(this.pet);
     observable.subscribe ( data => {
       console.log(data);
-      if (data.message == "Error Name") {
+      if (data["message"] == "Error Name") {
         this.error_name = data;
-      } else if (data.message == "Error Type") {
+      } else if (data["message"] == "Error Type") {
         this.error_type = data;
-      } else if (data.message == "Error Description") {
+      } else if (data["message"] == "Error Description") {
         this.error_description = data;
       } else {
         this._router.navigate(["/"]);
